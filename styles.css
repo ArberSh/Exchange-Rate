@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+    background-color: #B1B2FF;
+}
+.Exchange-Container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:100px auto;
+}
+.Exchange-Wrapper{
+    background-color: white;
+    padding: 1rem;
+    border-radius: 6px;
+}
+h1{
+    color: #B1B2FF;
+}
