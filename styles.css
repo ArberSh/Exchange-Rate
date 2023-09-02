@@ -14,10 +14,44 @@ body{
     margin:100px auto;
 }
 .Exchange-Wrapper{
+    width: 90%;
+    max-width: 18rem;
     background-color: white;
     padding: 1rem;
     border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #B1B2FF;
 }
 h1{
+    text-align: center;
+    margin-bottom: 1rem;
+}
+img{
+    width: 8rem;
+    margin-bottom: 1rem;
+}
+.Input-container{
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+.Input-container input{
+    width:100%;
+    max-width:10rem;
+    height:1.4rem;
+    font-size:14px;
     color: #B1B2FF;
+    border:none;
+    border-bottom: #B1B2FF 2px solid;
+    outline: none;
+    padding: 0.2rem;
+}
+.Change-Rate{
+    display: flex;
+    flex-direction: row;
 }
