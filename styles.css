@@ -23,9 +23,9 @@ body{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    color: #B1B2FF;
+    color: #9294ff;
 }
-h1{
+Title{
     text-align: center;
     margin-bottom: 1rem;
 }
@@ -41,17 +41,52 @@ img{
     flex-direction: column;
 }
 .Input-container input{
+    margin: 0.6rem 0;
     width:100%;
-    max-width:10rem;
+    max-width:12rem;
     height:1.4rem;
-    font-size:14px;
-    color: #B1B2FF;
+    font-size:16px;
+    color: #9294ff;
     border:none;
     border-bottom: #B1B2FF 2px solid;
     outline: none;
     padding: 0.2rem;
+    font-weight: bold;
 }
+/* FIX THIS DOWN  */
 .Change-Rate{
     display: flex;
     flex-direction: row;
+    gap: 1rem;
+}
+.select-selected{
+    background-color: #9294ff;
+    width: 6rem;
+}
+
+button{
+    width: 100%;
+    max-width: 12rem;
+    height: 2rem;
+    margin: 0.6rem 0;
+    background-color: #B1B2FF;
+    border: none;
+    font-size: bold;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+}
+button:active{
+    background-color: #9294ff;
+}
+.Result{
+    background-color: #cfd0ff;
+    color: rgb(0, 0, 0);
+    width: 12rem;
+    border-radius: 4px;
+    text-align: center;
+    padding: 0.4rem 0;
+    font-size: 14px;
 }
