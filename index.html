@@ -6,17 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
 </head>
 <body>
     <section class="Exchange-Rate">
         <div class="Exchange-Container">
             <div class="Exchange-Wrapper">
                 <!-- Fix here  nese spuno boje me div-->
+                <input type="text" class="test">
                 <h1 class="Title">Exchange Rate</h1>
                 <img src="Logo.png" alt="">
                 <div class="Input-container">
                 <label>Amount</label>
-                <input type="number">
+                <input type="number" class="PutNumber">
                 </div>
                 <div class="Change-Rate">
                     <div class="From">
@@ -37,7 +39,7 @@
                       </select>
                     </div>
                 </div>
-                <button>Convert</button>
+                <button onclick="getRate()">Convert</button>
                 <div class="Result">
                     <h1>69$</h1>
                 </div>
