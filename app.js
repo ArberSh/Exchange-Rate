@@ -1,4 +1,4 @@
-const apiKey = "ab9053afd87f50ab499ce093"
+const apiKey = "9f1824e87655217245642df4"
 
 const numb = document.querySelector(".PutNumber")
 const Result = document.querySelector(".Result")
@@ -26,17 +26,15 @@ function getOptionFrom() {
     const fromDropdown = document.querySelector('#Currency');
     fromDropdown.innerHTML = '';
     AllCurrency.forEach((element) => {
-        const option = document.createElement("option");
+        option = document.createElement("option");
         option.value = element;
         option.text = element;
         fromDropdown.appendChild(option);
-        
     });
 }
-function getOption(){
+function getOptionF(){
         const selectedCurrency = document.querySelector('#Currency').value;
         getRate(selectedCurrency)
-        console.log(selectedCurrency)
     }
 function getOptionTo() {
     const toDropdown = document.querySelector('#Currency1');
@@ -46,13 +44,18 @@ function getOptionTo() {
         option.value = element;
         option.text = element;
         toDropdown.appendChild(option);
-        const selectedCurrency = document.querySelector('#Currency1').value;
-        Results(selectedCurrency)
     });
 }
 
-function Results(Currency) {
-    numb.value = numb.value * DataRate[Currency]
-    Result.innerHTML = `<h1>${numb.value}</h1>`
-    numb.value = ''
+function Results() {
+    const selectedCurrency = document.querySelector('#Currency1').value;
+    const inputnumber = parseFloat(numb.value)
+    if(isNaN(inputnumber)) {
+        Result.innerHTML = 'Please enter a valid number.';
+    }
+    else{
+    const result = inputnumber * DataRate[selectedCurrency]
+    Result.innerHTML = `<h1>${result.toFixed(2) + " " + selectedCurrency}</h1>`
+    Result.style.display = 'block'
+}
 }

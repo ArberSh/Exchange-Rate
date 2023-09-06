@@ -17,11 +17,11 @@
                 <img src="Logo.png" alt="">
                 <div class="Input-container">
                 <label>Amount</label>
-                <input type="number" class="PutNumber">
+                <input type="number" class="PutNumber" min="0">
                 </div>
                 <div class="Change-Rate">
                     <div class="From">
-                        <select id="Currency" name="Currency" onchange="getOption()">
+                        <select id="Currency" name="Currency" onchange="getOptionF()">
                             <option value="Choose">Choose</option>
                             <option value="USD">USD</option>
                             <option value="LEK">LEK</option>
@@ -31,7 +31,7 @@
                     </div>
                       <h3>To</h3>
                       <div class="To">
-                      <select name="Currency1" id="Currency1" onchange="getOptionTo()">
+                      <select name="Currency1" id="Currency1">
                         <option value="USD">USD</option>
                         <option value="LEK">LEK</option>
                         <option value="EURO">EURO</option>
