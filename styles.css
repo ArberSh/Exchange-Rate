@@ -75,6 +75,13 @@ select{
 select:active{
     background-color: #9294ff;
 }
+select option {
+    background-color: #cfd0ff;
+    color: #333;
+    padding: 2px;
+    font-size: 14px;
+    line-height: 1.5;
+  }
 button{
     width: 100%;
     max-width: 12rem;
@@ -95,7 +102,8 @@ button:active{
 .Result{
     background-color: #cfd0ff;
     color: rgb(0, 0, 0);
-    width: 12rem;
+    width: 100%;
+    max-width: 12rem;
     border-radius: 4px;
     text-align: center;
     padding: 0.4rem 0;

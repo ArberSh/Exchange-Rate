@@ -1,4 +1,6 @@
-currencies = [
+[
+  {
+    "currencies":[
   "AED",
   "AFN",
   "ALL",
@@ -168,5 +170,7 @@ currencies = [
   "YER",
   "ZAR",
   "ZMW",
-  "ZWL",
-];
+  "ZWL"
+]
+}
+]

@@ -1,40 +1,58 @@
-console.log("works")
-const apiKey = "11be19509942028a46e7605d"
+const apiKey = "ab9053afd87f50ab499ce093"
 
 const numb = document.querySelector(".PutNumber")
 const Result = document.querySelector(".Result")
 const test = document.querySelector(".test")
 
 let DataRate = []
-async function getRate(currency){
-    const response = await fetch(`https://v6.exchangerate-api.com/v6/${apiKey}/latest/${currency}/`)
+let AllCurrency = []
+
+async function getRate(currency) {
+    const response = await fetch(`https://v6.exchangerate-api.com/v6/${apiKey}/latest/${currency}`)
     const data = await response.json()
-    console.log(data)
     DataRate = data.conversion_rates
-    console.log(DataRate.EUR)
 }
-function getOption() {const fromDropdown = document.querySelector('#Currency');
-    fromDropdown.innerHTML = ''; // Clear existing options
 
-    for (const currency in DataRate) {
-        const option = document.createElement('option');
-        option.value = currency;
-        option.text = currency;
+async function getAllCurrency() {
+    const response = await fetch(`currency-codes.json`)
+    const data = await response.json()
+    AllCurrency = data[0].currencies;
+    getOptionFrom();
+    getOptionTo()
+}
+getAllCurrency();
+
+function getOptionFrom() {
+    const fromDropdown = document.querySelector('#Currency');
+    fromDropdown.innerHTML = '';
+    AllCurrency.forEach((element) => {
+        const option = document.createElement("option");
+        option.value = element;
+        option.text = element;
         fromDropdown.appendChild(option);
+        
+    });
+}
+function getOption(){
+        const selectedCurrency = document.querySelector('#Currency').value;
+        getRate(selectedCurrency)
+        console.log(selectedCurrency)
     }
-    const selectedCurrency = document.querySelector('#Currency').value;
-    getRate(selectedCurrency)
-    console.log(selectedCurrency);
+function getOptionTo() {
+    const toDropdown = document.querySelector('#Currency1');
+    toDropdown.innerHTML = '';
+    AllCurrency.forEach((element) => {
+        const option = document.createElement("option");
+        option.value = element;
+        option.text = element;
+        toDropdown.appendChild(option);
+        const selectedCurrency = document.querySelector('#Currency1').value;
+        Results(selectedCurrency)
+    });
 }
 
-function populateFromDropdown() {
-    
-}
-
-function Results(){
-    numb.value = numb.value * DataRate.EUR
+function Results(Currency) {
+    numb.value = numb.value * DataRate[Currency]
     Result.innerHTML = `<h1>${numb.value}</h1>`
     numb.value = ''
-    console.log("works")
 }
-console.log(DataRate.EUR)
