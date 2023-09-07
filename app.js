@@ -46,16 +46,16 @@ function getOptionTo() {
         toDropdown.appendChild(option);
     });
 }
-
 function Results() {
     const selectedCurrency = document.querySelector('#Currency1').value;
     const inputnumber = parseFloat(numb.value)
     if(isNaN(inputnumber)) {
-        Result.innerHTML = 'Please enter a valid number.';
+        Result.innerHTML = `<h2> Please enter a valid number. </h2>`
+        Result.style.display = 'block'
     }
     else{
     const result = inputnumber * DataRate[selectedCurrency]
-    Result.innerHTML = `<h1>${result.toFixed(2) + " " + selectedCurrency}</h1>`
+    Result.innerHTML = `<h1>${result.toFixed(4) + " " + selectedCurrency}</h1>`
     Result.style.display = 'block'
 }
 }
